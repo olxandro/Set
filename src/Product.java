@@ -7,7 +7,7 @@ public class Product {
     private Double price;
     private Double weight;
 
-    Set<String> products = new HashSet<>();
+
 
     public Product(String name, Double price, Double weight) throws ProductException {
         if (name == null || price == null || weight == null){
@@ -40,20 +40,5 @@ public class Product {
         this.weight = weight;
     }
 
-    public void addProduct(String product) {
-        products.add(product);
-    }
 
-    public void containsProduct(Product product) {
-        if (products.contains(product)) {
-            System.out.println("Товар не куплен");
-        } else {
-            System.out.println("Товар куплен");
-        }
-
-    }
-
-    public void removeProducts(Product product) {
-        products.remove(product);
-    }
 }
