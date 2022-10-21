@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Main {
@@ -34,7 +35,7 @@ public class Main {
         allRecepts.add(golobz);
         pirog.sumProducts();
 
-        ArrayList<Integer> numbers = new ArrayList<>(20);
+        List<Integer> numbers = new ArrayList<>(20);
         for (int i = 0; i < 20; i++) {
             numbers.add(i, (int) (Math.random() * 1000));
         }
