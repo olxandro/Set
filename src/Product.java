@@ -5,17 +5,20 @@ public class Product {
 
     private String name;
     private Double price;
-    private Double weight;
+    private Integer quantity;
 
 
 
-    public Product(String name, Double price, Double weight) throws ProductException {
-        if (name == null || price == null || weight == null){
+    public Product(String name, Double price, Integer quantity) throws ProductException {
+        if (name == null || price == null){
         throw new ProductException("Заполните карточку товара полностью");
         } else {
             this.name = name;
             this.price = price;
-            this.weight = weight;
+            if (quantity == null) {
+                quantity = 1;
+            }
+            this.quantity = quantity;
         }
 
     }
@@ -32,13 +35,16 @@ public class Product {
         this.price = price;
     }
 
-    public Double getWeight() {
-        return weight;
+
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setWeight(Double weight) {
-        this.weight = weight;
+    public Integer getQuantity() {
+        return quantity;
     }
 
-
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
 }

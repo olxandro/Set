@@ -82,6 +82,5 @@ public class Passport {
     }
 
     public void searchPassport(Double numberPassport) {
-        Set<Integer> keys = Map<Intege
     }
 }
