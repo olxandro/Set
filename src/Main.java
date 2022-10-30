@@ -5,35 +5,34 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws ProductException {
-        Set<Product> a = new HashSet<>();
-        Set<Product> b = new HashSet<>();
-
-
-        Product banan = new Product("банан", 39.50, 5);
-        Product coconut = new Product("кокос", 112.40, 2);
-        Product apple = new Product("яблоко", 25.60, 3);
-        Product orange = new Product("апельсин", 35.30, null);
-        Product grape = new Product("виноград", 120.30, 4);
-
-
-        a.add(banan);
-        a.add(coconut);
-        a.add(apple);
-        b.add(orange);
-        b.add(grape);
-
-
-
-
-        Recipe pirog = new Recipe(a, "Шарлотка");
-        Recipe golobz = new Recipe(b,"голобец");
-
-//        HashMap<Product, String quantity>
-        Set<Recipe> allRecepts = new HashSet<>();
-        allRecepts.add(pirog);
-        allRecepts.add(golobz);
-        allRecepts.add(golobz);
-        pirog.sumProducts();
+//        Set<Product> a = new HashSet<>();
+//        Set<Product> b = new HashSet<>();
+//
+//
+//        Product banan = new Product("банан", 39.50, 5);
+//        Product coconut = new Product("кокос", 112.40, 2);
+//        Product apple = new Product("яблоко", 25.60, 3);
+//        Product orange = new Product("апельсин", 35.30, null);
+//        Product grape = new Product("виноград", 120.30, 4);
+//
+//
+//        a.add(banan);
+//        a.add(coconut);
+//        a.add(apple);
+//        b.add(orange);
+//        b.add(grape);
+//
+//
+//
+//
+//        Recipe pirog = new Recipe(a, "Шарлотка");
+//        Recipe golobz = new Recipe(b,"голобец");
+//
+//        Set<Recipe> allRecepts = new HashSet<>();
+//        allRecepts.add(pirog);
+//        allRecepts.add(golobz);
+//        allRecepts.add(golobz);
+//        pirog.sumProducts();
 
         List<Integer> numbers = new ArrayList<>(20);
         for (int i = 0; i < 20; i++) {
@@ -101,7 +100,7 @@ public class Main {
 
         ToMap mp = new ToMap(nums);
         mp.addToMap("str15", 23);
-        System.out.println(mp.toString());
+        System.out.println(mp);
 
          /*
         Создайте Map<String, List<Integer>>. Заполните ее 5 элементами, где ключ — произвольное значение,

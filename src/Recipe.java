@@ -1,15 +1,15 @@
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class Recipe {
 
-    private Set<Product> products = new HashSet<>();
-    private double sumProducts;
+    private Integer amountProduct;
+//    private Set<Product> products = new HashSet<>();
+
+    private Map<Product, Integer> products = new HashMap<>();
     private String nameRecipe;
     Set<Recipe> allRecepts = new HashSet<>();
 
-    public Recipe(Set<Product> products, String nameRecipe) throws ProductException {
+    public Recipe(Map<Product, Integer> products, String nameRecipe) throws ProductException {
         this.products = products;
         for (Recipe recipe : allRecepts) {
             if (nameRecipe.equals(recipe.getNameRecipe())) {
@@ -20,17 +20,14 @@ public class Recipe {
         }
     }
 
-    public Set<Product> getProducts() {
+    public Map<Product, Integer> getProducts() {
         return products;
-    }
-
-    public double getSumProducts() {
-        return sumProducts;
     }
 
     public String getNameRecipe() {
         return nameRecipe;
     }
+
 
     @Override
     public boolean equals(Object o) {
@@ -42,13 +39,19 @@ public class Recipe {
 
     @Override
     public int hashCode() {
-        return Objects.hash(products, sumProducts, nameRecipe);
+        return Objects.hash(products, nameRecipe);
     }
 
+    public void addProductInRecepe(Product product, int requaredQuantity) {
+        if (products.containsKey(product)) {
+            throw new RuntimeException("Такой Рецепт уже есть!");
+        }
+        products.put(product, requaredQuantity);
+    }
     public void sumProducts() {
          double sumProducts = 0;
-      for (Product a : products){
-          sumProducts += a.getPrice();
+      for (Product a : products.keySet()){
+          sumProducts += products.get(a) * a.getPrice();
 
       }
         System.out.println(" Суммарная стоимость всех продуктов у данного рецепта = " + sumProducts );
